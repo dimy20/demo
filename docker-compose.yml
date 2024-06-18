@@ -1,0 +1,87 @@
+version: "3.2"
+
+services:
+  vigilant-ai-api:
+    container_name: vigilant-ai-api
+
+    build:
+      context: ./agents
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - redis-service
+    networks:
+      - backend
+      - webapp
+    volumes:
+      - type: bind
+        source: ./agents
+        target: /app
+    environment:
+      - REDIS_SERVICE=redis-service
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - EMAIL_USERNAME=infovigilantai@gmail.com
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+
+  redis-service:
+    container_name: redis-service
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+
+  frontend:
+    container_name: vigilant-ai-webapp
+    build:
+      context: ./web-app
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    networks:
+      - webapp
+    volumes:
+      - type: bind
+        source: ./web-app
+        target: /app
+    depends_on:
+      - redis-service
+      - vigilant-ai-api
+
+    restart: unless-stopped
+
+  alert-sender:
+    container_name: alert-sender
+    build:
+      context: ./agents/alert-sender
+      dockerfile: Dockerfile
+    networks:
+      - backend
+
+    volumes:
+      - type: bind
+        source: ./agents/alert-sender
+        target: /app
+    depends_on:
+      - vigilant-ai-api
+    environment:
+      - SEND=YES
+
+  splunk:
+    container_name: splunk
+    image: "splunk/splunk:latest"
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_PASSWORD=${SPLUNK_PASSWORD}
+    ports:
+      - "8000:8000"
+      - "8089:8089"
+    networks:
+      - backend
+    logging:
+      driver: none
+
+networks:
+  backend:
+  webapp:

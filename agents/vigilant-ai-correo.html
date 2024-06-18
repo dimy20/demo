@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Correo" content="width=device-width, initial-scale=1.0">
+    <title>Correo de Vigilant AI</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #0e0438;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .logo {
+            margin: 0 auto;
+        }
+        .content {
+            color: #333;
+        }
+        .footer {
+            background-color: #cccccc4c;  /* Color del rectángulo del footer */
+            font-size: 12px;
+            color: #77777774;
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="cid:logo" alt="Vigilant AI Logo" class="logo" width="150">
+        </div>
+        <div class="content">
+            
+            <p>Estimado/a {{username}}</p>
+
+            <p>{{content}}</p>
+
+            <p>Para continuar el analisis, haga clic en el siguiente enlace para iniciar una conversacion con Vigilant AI:</p>
+
+            <p><a href="{{session_url}}">Iniciar Chat con Vigilant AI</a></p>
+
+            <br>
+            <p>Saludos cordiales,</p>
+
+            Vigilant AI.<br>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Vigilant AI. Todos los derechos reservados.</p>
+            <p>Este correo electrónico y cualquier archivo adjunto son confidenciales y están destinados exclusivamente al uso de la persona o entidad a la que se dirige. Si ha recibido este correo electrónico por error, por favor notifique al remitente y elimine este mensaje de inmediato.</p>
+        </div>
+    </div>
+</body>
+</html>

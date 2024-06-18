@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigilant AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Vigilant AI Logo" class="logo-img">
+            </div>
+            <div class="menu">
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#"><i class="fas fa-chart-line"></i> Activity</a>
+                <a href="#"><i class="fas fa-plug"></i> Integrations</a>
+                <a href="#"><i class="fas fa-robot"></i> AI Settings</a>
+                <a href="#"><i class="fas fa-key"></i> API Keys</a>
+                <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+                <a href="#"><i class="fas fa-chart-bar"></i> Metrics</a>
+                <a href="#"><i class="fas fa-book"></i> Documentation</a>
+                <a href="#"><i class="fas fa-users-cog"></i> Roles y Permisos</a>
+                <a href="#"><i class="fas fa-file-invoice-dollar"></i> Billing</a>
+                <a href="#"><i class="fas fa-lock"></i> Access</a>
+            </div>
+            <div class="account">
+                <a href="#"><i class="fas fa-user"></i> Profile</a>
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <nav class="nav-links">
+                    <a href="#">Activity</a>
+                    <a href="#">Updates</a>
+                    <a href="#">Alerts</a>
+                    <a href="#">Actions</a>
+                    <a href="#">Appearance</a>
+                    <a href="#">...</a>
+                </nav>
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Hans Orsted</span>
+                    <span>Company Account</span>
+                </div>
+            </div>
+            <div class="quick-actions">
+                <button>Generate Report</button>
+                <button>Load Files</button>
+                <button>Create a new rule</button>
+                <button>Get Latest Analysis</button>
+            </div>
+            <div class="calendar-section">
+                <h3>Hubieron 122 eventos en el último año</h3>
+                <div class="calendar-container">
+                    <div class="months">
+                        <span>Jun</span>
+                        <span>Jul</span>
+                        <span>Aug</span>
+                        <span>Sep</span>
+                        <span>Oct</span>
+                        <span>Nov</span>
+                        <span>Dec</span>
+                        <span>Jan</span>
+                        <span>Feb</span>
+                        <span>Mar</span>
+                        <span>Apr</span>
+                        <span>May</span>
+                        <span>Jun</span>
+                    </div>
+                    <div id="calendar" class="calendar"></div>
+                </div>
+            </div>
+            <div class="activity-section">
+                <h2>Activity</h2>
+                <input type="text" placeholder="Search">
+                <div class="sort-buttons">
+                    <button class="newest">Newest</button>
+                    <button class="oldest">Oldest</button>
+                </div>
+                <div class="activity">
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <span class="item-number">01</span>
+                            <span class="item-type">Analysis</span>
+                            <span class="item-date">May 13, 2024</span>
+                            <span class="item-description">Anomalous User</span>
+                            <span class="item-value">$0.000452</span>
+                            <span class="item-severity medium">Medium</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="item-number">02</span>
+                            <span class="item-type">Analysis</span>
+                            <span class="item-date">Aug 22, 2024</span>
+                            <span class="item-description">Acquired Access</span>
+                            <span class="item-value">$0.000297</span>
+                            <span class="item-severity high">High</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="item-number">03</span>
+                            <span class="item-type">Action</span>
+                            <span class="item-date">Apr 10, 2024</span>
+                            <span class="item-description">Sent email with...</span>
+                            <span class="item-value">$0.000702</span>
+                            <span class="item-severity low">Low</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="item-number">04</span>
+                            <span class="item-type">Analysis</span>
+                            <span class="item-date">Dec 29, 2024</span>
+                            <span class="item-description">Phishing prevention</span>
+                            <span class="item-value">$0.000986</span>
+                            <span class="item-severity high">High</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="chat-header">Today</div>
+            <div class="chat-items">
+                <div class="chat-item">
+                    <span>can you analyze the recent spike...</span>
+                    <i class="fas fa-times" onclick="removeChatItem(this)"></i>
+                </div>
+                <div class="chat-item">
+                    <span>phishing email attempts detailed...</span>
+                    <i class="fas fa-times" onclick="removeChatItem(this)"></i>
+                </div>
+                <div class="chat-item">
+                    <span>high-priority security incidents...</span>
+                    <i class="fas fa-times" onclick="removeChatItem(this)"></i>
+                </div>
+                <div class="chat-item">
+                    <span>potential impacts and mitigation s...</span>
+                    <i class="fas fa-times" onclick="removeChatItem(this)"></i>
+                </div>
+            </div>
+            <div id="chat-body" class="chat-body">
+                <div class="message bot-message">
+                    <p>Hello! 👋 Welcome to Vigilant AI.</p>
+                </div>
+                <div class="message bot-message">
+                    <p>I'm here to assist you with any questions or analyses related to your SIEM alerts and security incidents.</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input id="chat-input" type="text" placeholder="Message Vigilant AI">
+                <button><i class="fas fa-paper-plane" id="send-message-button"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

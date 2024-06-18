@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .chatbot-message {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333333;
+        }
+        .section-content {
+            font-size: 16px;
+            color: #555555;
+            line-height: 1.5;
+        }
+        .section-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .section-content li {
+            margin-bottom: 5px;
+        }
+        .section-content pre {
+            background-color: #f9f9f9;
+            border: 1px solid #e1e1e1;
+            border-radius: 4px;
+            padding: 10px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbot-message">
+        <div class="section">
+            <div class="section-title">Summary:</div>
+            <div class="section-content">
+                The alert is related to a brute force log attempt detected in the system.
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Description:</div>
+            <div class="section-content">
+                The alert indicates a brute force log attempt with the following details:
+                <ul>
+                    <li>Search name: Brute Force Log Attempt</li>
+                    <li>IP address: 192.168.1.10</li>
+                    <li>Username: user1</li>
+                    <li>Count: 4</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Analysis:</div>
+            <div class="section-content">
+                A brute force attack is a hacking method that involves trying various username and password combinations until the correct one is found. In this case, there have been 4 failed login attempts from IP address 192.168.1.10 using the username user1. This could indicate an unauthorized individual attempting to gain access to the system.
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Recommended Actions:</div>
+            <div class="section-content">
+                <ol>
+                    <li>Investigate the source IP address 192.168.1.10 to determine if it belongs to a legitimate user or if it is a malicious actor.</li>
+                    <li>Monitor and log any further login attempts from this IP address.</li>
+                    <li>Consider blocking the IP address temporarily to prevent further unauthorized login attempts.</li>
+                    <li>Review and strengthen the system's password policy to prevent brute force attacks in the future.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
